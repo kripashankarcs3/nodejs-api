@@ -1,0 +1,31 @@
+# File Permission Configuration Commands
+
+# home directory
+cd ~
+
+# Create index.html file
+touch index.html
+
+# Add HTML content
+echo "<html><body><h1>Welcome !!! </h1></body></html>" > index.html
+
+# Check default permissions
+ls -l index.html
+
+# Grant full permissions to all users
+chmod 777 index.html
+
+# Verify permissions
+ls -l index.html
+
+# Change owner and group to www-data
+sudo chown www-data:www-data index.html
+
+# Verify ownership
+ls -l index.html
+
+# Change permissions to 755
+chmod 755 index.html
+
+# Final verification
+ls -l index.html

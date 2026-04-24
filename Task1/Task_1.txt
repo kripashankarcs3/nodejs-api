@@ -1,0 +1,52 @@
+# Current logged-in user
+whoami
+id -un
+
+#  logged-in users and their activity
+who
+w
+
+#  history
+last
+last -a
+
+# System information, hostname, uptime
+uname -a
+hostname
+uptime
+
+# Create groups
+sudo groupadd developers
+sudo groupadd qa
+
+# Verify groups
+getent group developers
+getent group qa
+cat /etc/group
+
+# Cretate users and assign groups
+sudo useradd -m -g developers aman
+sudo useradd -m -g developers ritu
+sudo useradd -m -g qa karan
+
+# Verify users
+id aman
+id karan
+
+# Set passwords (Optional but good practice) 
+sudo passwd aman
+sudo passwd ritu
+sudo passwd karan
+
+# Delete user ritu safely
+
+who | grep ritu
+
+# Kill active sessions (if any)
+pkill -u ritu
+
+# Delete user and home directory
+sudo userdel -r ritu
+
+# Verify deletion
+id ritu
